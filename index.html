@@ -1,9 +1,18 @@
+
+<html>
+
+<head>
+
+<title>WixRotate!</title>
+
 <style>
 body { display: inline-block; white-space: nowrap; overflow: hidden; }
 svg { transition: 0.2s; }
 table { border-spacing: 0px; position: fixed; transform: rotate(45deg); }
 td { padding: 0px; }
 </style>
+
+</head>
 
 <body></body>
 
@@ -31,3 +40,5 @@ window.onkeyup = event => window.freeze ^= (event.code === 'Space')
 images.forEach(img => { img.onclick = _ => { rotate(img.style) } })
 setInterval(_ => window.freeze ? 0 : rotate(randomFromArray(images).style), 10000 / (r * c))
 </script>
+
+</html>
