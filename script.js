@@ -2,7 +2,7 @@ const paths = (window.location.search || 'M0 0 Q50 50 100 0|M0 100 Q50 50 100 10
 const range = n => [...Array(n)].map((v, i) => i)
 const randomFromArray = arr => arr[(Math.random() * arr.length) | 0]
 const rotate = style => style.transform = style.transform.replace(/\d+/, n => +n + 90)
-const arcToPath = arc => `<path d="${arc}" stroke=black fill="transparent"/>`
+const arcToPath = arc => `<path d="${arc}" stroke=pink stroke-width=8 fill="transparent"/>`
 const createSvg = arcs => `<svg width=100 viewBox=0,0,100,100 style=transform:rotate(0deg)>${arcs.map(arcToPath).join('')}</svg>`
 const square = on => createSvg(on ? paths : [])
 const td = on => `<td>${square(on)}</td>`
@@ -27,4 +27,4 @@ images.forEach(img => {
     rotate(img.style)
   }
 })
-setInterval(_ => window.freeze ? 0 : rotate(randomFromArray(images).style), 10000 / (r * c))
+setInterval(_ => window.freeze ? 0 : rotate(randomFromArray(images).style), 1000 / (r * c))
